@@ -7,7 +7,7 @@ on:
       - 'v*'
   pull_request:
     branches:
-      - develop
+      - main
 
 jobs:
 
@@ -32,7 +32,6 @@ jobs:
           STORE_PASSWORD=${{ secrets.STORE_PASSWORD }}
           KEY_ALIAS=${{ secrets.KEY_ALIAS }}
           KEY_PASSWORD=${{ secrets.KEY_PASSWORD }}
-          GRAPHQL_URL=${{ secrets.GRAPHQL_URL }}
           EOL
       - name: Create key store
         run: |
@@ -84,7 +83,6 @@ jobs:
           STORE_PASSWORD=${{ secrets.STORE_PASSWORD }}
           KEY_ALIAS=${{ secrets.KEY_ALIAS }}
           KEY_PASSWORD=${{ secrets.KEY_PASSWORD }}
-          GRAPHQL_URL=${{ secrets.GRAPHQL_URL }}
           EOL
       - name: Create key store
         run: |
@@ -113,7 +111,6 @@ jobs:
           STORE_PASSWORD=${{ secrets.STORE_PASSWORD }}
           KEY_ALIAS=${{ secrets.KEY_ALIAS }}
           KEY_PASSWORD=${{ secrets.KEY_PASSWORD }}
-          GRAPHQL_URL=${{ secrets.GRAPHQL_URL }}
           EOL
       - name: Create key store
         run: |
