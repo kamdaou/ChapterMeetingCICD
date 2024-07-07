@@ -36,7 +36,7 @@ jobs:
       - name: create google services file
         run: |
           cat >app/google-services.json <<EOL
-          {{ secrets.GOOGLE_SERVICES }}
+          ${{ secrets.GOOGLE_SERVICES }}
           EOL
       - name: Create key store
         run: |
@@ -92,7 +92,7 @@ jobs:
       - name: create google services file
         run: |
           cat >app/google-services.json <<EOL
-          {{ secrets.GOOGLE_SERVICES }}
+          ${{ secrets.GOOGLE_SERVICES }}
           EOL
       - name: Create key store
         run: |
@@ -125,7 +125,7 @@ jobs:
       - name: create google services file
         run: |
           cat >app/google-services.json <<EOL
-          {{ secrets.GOOGLE_SERVICES }}
+          ${{ secrets.GOOGLE_SERVICES }}
           EOL
       - name: Create key store
         run: |
