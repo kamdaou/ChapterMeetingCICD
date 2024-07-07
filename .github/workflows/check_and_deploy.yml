@@ -33,6 +33,11 @@ jobs:
           KEY_ALIAS=${{ secrets.KEY_ALIAS }}
           KEY_PASSWORD=${{ secrets.KEY_PASSWORD }}
           EOL
+      - name: create google services file
+        run: |
+          cat >app/google-services.json <<EOL
+          {{ secrets.GOOGLE_SERVICES }}
+          EOL
       - name: Create key store
         run: |
           echo "${{ secrets.RELEASE_KEYSTORE }}" > release.keystore.asc
@@ -84,6 +89,11 @@ jobs:
           KEY_ALIAS=${{ secrets.KEY_ALIAS }}
           KEY_PASSWORD=${{ secrets.KEY_PASSWORD }}
           EOL
+      - name: create google services file
+        run: |
+          cat >app/google-services.json <<EOL
+          {{ secrets.GOOGLE_SERVICES }}
+          EOL
       - name: Create key store
         run: |
           echo "${{ secrets.RELEASE_KEYSTORE }}" > release.keystore.asc
@@ -111,6 +121,11 @@ jobs:
           STORE_PASSWORD=${{ secrets.STORE_PASSWORD }}
           KEY_ALIAS=${{ secrets.KEY_ALIAS }}
           KEY_PASSWORD=${{ secrets.KEY_PASSWORD }}
+          EOL
+      - name: create google services file
+        run: |
+          cat >app/google-services.json <<EOL
+          {{ secrets.GOOGLE_SERVICES }}
           EOL
       - name: Create key store
         run: |
