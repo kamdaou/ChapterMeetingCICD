@@ -94,7 +94,7 @@ jobs:
           ./gradlew test
 
   android_tests:
-    runs-on: [ macos-latest ]
+    runs-on: [ macos-13 ]
     steps:
       - uses: actions/checkout@v4
       - name: setup java 17
