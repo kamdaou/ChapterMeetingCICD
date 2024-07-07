@@ -14,6 +14,7 @@
 .cxx
 local.properties
 signing_key.jks.base64.txt
+app/google-services.json
 key.properties
 keystore.jks
 keystore.jks.asc

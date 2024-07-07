@@ -141,7 +141,7 @@ jobs:
         uses: wzieba/Firebase-Distribution-Github-Action@v1
         with:
           appId: ${{secrets.FIREBASE_APP_ID}}
-          token: ${{secrets.FIREBASE_TOKEN}}
+          serviceCredentialsFileContent: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
           groups: Devs
           file: app-release-signed.apk
 
@@ -163,7 +163,7 @@ jobs:
           serviceAccountJsonPlainText: ${{ secrets.SERVICE_ACCOUNT_JSON }}
           # 3
           packageName: com.amalitech.chaptermeetingcicd
-          releaseFile: app-release-unsigned-signed.apk
+          releaseFile: app-release-signed.apk
           track: internal
           userFraction: 0.50
           mappingFile: mapping.txt
