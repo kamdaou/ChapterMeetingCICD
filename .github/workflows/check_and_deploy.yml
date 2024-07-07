@@ -158,7 +158,7 @@ jobs:
           appId: ${{secrets.FIREBASE_APP_ID}}
           serviceCredentialsFileContent: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
           groups: Devs
-          file: app-release-signed.apk
+          file: release.apk
 
   deploy-play-store:
     needs: [ build ]
@@ -178,7 +178,7 @@ jobs:
           serviceAccountJsonPlainText: ${{ secrets.SERVICE_ACCOUNT_JSON }}
           # 3
           packageName: com.amalitech.chaptermeetingcicd
-          releaseFile: app-release-signed.apk
+          releaseFile: release.apk
           track: internal
           userFraction: 0.50
           mappingFile: mapping.txt
