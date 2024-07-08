@@ -46,6 +46,13 @@ jobs:
       - name: Generate Release APK
         run: ./gradlew assembleRelease
 
+      - name: Generate Release AAB
+        run: ./gradlew bundleRelease
+
+      - name: ls
+        run: ls
+
+
       - name: Sign APK
         uses: ilharp/sign-android-release@v1
         # ID used to access action output
@@ -61,6 +68,10 @@ jobs:
       - uses: actions/upload-artifact@master
         with:
           name: release.apk
+          path: ${{steps.sign_app.outputs.signedFile}}
+      - uses: actions/upload-artifact@master
+        with:
+          name: release.aab
           path: ${{steps.sign_app.outputs.signedFile}}
 
       - uses: actions/upload-artifact@master
@@ -159,7 +170,7 @@ jobs:
       # 1
       - uses: actions/download-artifact@master
         with:
-          name: release.apk
+          name: release.aab
       - uses: actions/download-artifact@master
         with:
           name: mapping.txt
@@ -172,7 +183,7 @@ jobs:
           serviceAccountJsonPlainText: ${{ secrets.SERVICE_ACCOUNT_JSON }}
           # 3
           packageName: com.amalitech.chaptermeetingcicd
-          releaseFiles: "app-release-unsigned-signed.apk"
-          track: internal
+          releaseFiles: "app-release-unsigned-signed.aab"
+          track: open
           status: draft
           mappingFile: mapping.txt
