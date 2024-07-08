@@ -195,6 +195,6 @@ jobs:
           # 3
           packageName: com.amalitech.chaptermeetingcicd
           releaseFiles: "app-release-signed.aab"
-          track: open
+          track: internal
           status: draft
           mappingFile: mapping.txt
