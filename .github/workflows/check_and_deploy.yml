@@ -156,8 +156,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       # 2
-      - name: checkout
-        uses: actions/checkout@v4
       - uses: actions/download-artifact@master
         with:
           name: release.apk
